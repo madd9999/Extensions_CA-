@@ -10,7 +10,7 @@ pyRevit extensions for the office. Each `*.extension` folder in this repository 
 
 1. Pick a folder for the extensions, e.g. `C:\pyRevit\OfficeExtensions`.
 2. Get the files into it, using either option:
-   - **With git:** `git clone <repo URL> "C:\pyRevit\OfficeExtensions"`
+   - **With git:** `git clone https://github.com/madd9999/Extensions_CA-.git "C:\pyRevit\OfficeExtensions"`
    - **Without git:** on the GitHub page click **Code > Download ZIP**, then unzip it into that folder.
 3. In Revit go to **pyRevit tab > Settings > Custom Extension Directories**, click **Add folder**,
    pick that folder, then **Save Settings and Reload**.
