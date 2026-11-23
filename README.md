@@ -1,30 +1,38 @@
-# Office pyRevit Extensions
+# CA Office pyRevit Extension
 
-pyRevit extensions for the office. Each `*.extension` folder in this repository is one extension.
+Generic pyRevit tools for the office. This whole repository is **one** pyRevit extension.
 
-| Extension | What it does |
+| Tab > Panel > Button | What it does |
 |---|---|
-| `FallingImage.extension` | **Childers > Fun > Drop Image** – drops an image down the screen. |
+| **Childers > Fun > Drop Image** | Drops an image down the screen. |
 
-## Install (one time)
+## Install (one time, about 1 minute)
 
-1. Pick a folder for the extensions, e.g. `C:\pyRevit\OfficeExtensions`.
-2. Get the files into it, using either option:
-   - **With git:** `git clone https://github.com/madd9999/Extensions_CA-.git "C:\pyRevit\OfficeExtensions"`
-   - **Without git:** on the GitHub page click **Code > Download ZIP**, then unzip it into that folder.
-   > **ZIP users – check the folders.** The ZIP unzips into extra folders like
-   > `Extensions_CA--main\Extensions_CA--main\`. pyRevit only sees `*.extension` folders that sit
-   > **directly** inside the folder you add. Open the folders until you see `FallingImage.extension`,
-   > then either move everything from there up into `C:\pyRevit\OfficeExtensions`, or add that inner
-   > folder in step 3.
-   >
-   > Correct: `C:\pyRevit\OfficeExtensions\FallingImage.extension\Childers.tab\...`
-3. In Revit go to **pyRevit tab > Settings > Custom Extension Directories**, click **Add folder**,
-   pick the folder that directly contains the `*.extension` folders, then **Save Settings and Reload**.
+1. Close Revit.
+2. Press the **Windows key**, type `cmd`, press **Enter**.
+3. Paste this line and press **Enter**:
 
-The new tab and buttons appear after the reload.
+   ```
+   pyrevit extend ui CAOffice https://github.com/madd9999/Extensions_CA-.git
+   ```
+
+4. Open Revit – the **Childers** tab is there.
+
+If you previously installed this from a ZIP: remove that folder from
+**pyRevit > Settings > Custom Extension Directories** so the buttons don't show twice.
 
 ## Update
 
-- **With git:** run `git pull` inside the folder, then click **pyRevit > Reload** in Revit.
-- **Without git:** download the ZIP again, replace the folder contents, then click Reload.
+In Revit click **pyRevit tab > Update** (or run `pyrevit extensions update CAOffice` in cmd),
+then **Reload**.
+
+## Uninstall
+
+```
+pyrevit extensions delete CAOffice
+```
+
+## For the maintainer
+
+Folder layout must stay `<Name>.tab\<Name>.panel\<Name>.pushbutton\script.py` at the root of the repo.
+New generic tools = new panels/buttons inside `Childers.tab` (or another `.tab` folder at the root).
